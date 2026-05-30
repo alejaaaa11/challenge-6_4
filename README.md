@@ -3,6 +3,7 @@
 ### Universidad Distrital Francisco José de Caldas — Machine Learning
 
 ---
+# Link Video: https://www.youtube.com/watch?v=YApzfxNB9p0
 
 ## Domain
 **Education Systems** — Anomaly detection and representation learning on ~95K U.S.
