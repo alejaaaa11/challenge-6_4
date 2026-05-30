@@ -40,7 +40,7 @@ docker-compose up notebook
 **5.** Navigate to `notebooks/` → double-click `best_run.ipynb`  
 **6.** Click **Run → Run All Cells**
 
-> ⏱ Training takes ~15-20 minutes (AE + VAE × 3 seeds + t-SNE + UMAP).  
+>  Training takes ~15-20 minutes (AE + VAE × 3 seeds + t-SNE + UMAP).  
 > All results are saved to your local `figures/`, `results/`, and `models/` folders.
 
 ---
