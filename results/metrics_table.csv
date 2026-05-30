@@ -1,0 +1,4 @@
+Model,Latent_Dim,Epochs,Threshold,Anomaly_Rate,Silhouette_Latent,Beta,N_Estimators,Contamination
+AE,16.0,100.0,0.0021800000686198473,8.0%,0.1872,—,—,—
+VAE,16.0,100.0,0.5543220043182373,7.4%,0.2818,1.0,—,—
+IsoForest,—,—,—,9.7%,—,—,200.0,0.05

@@ -1,0 +1,4 @@
+Pair,Spearman_rho
+AE vs VAE,0.343
+AE vs ISO,0.7216
+VAE vs ISO,0.4062
