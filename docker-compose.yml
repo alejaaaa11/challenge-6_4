@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  notebook:
+    build: .
+    container_name: challenge6_group4
+    ports:
+      - "8888:8888"
+    volumes:
+      # Mount data folder so CSVs persist outside the container
+      - ./data:/app/data
+      # Mount outputs so figures/results are saved locally
+      - ./figures:/app/figures
+      - ./results:/app/results
+      - ./models:/app/models
+    environment:
+      - PYTHONUNBUFFERED=1
+
+  # Optional: download data before running notebook
+  download:
+    image: python:3.12-slim
+    container_name: challenge6_download
+    volumes:
+      - ./data:/data
+    command: >
+      bash -c "
+        apt-get update -q && apt-get install -y -q wget unzip &&
+        cd /data &&
+        wget -q https://nces.ed.gov/ccd/data/zip/ccd_sch_029_2223_w_1a_083023.zip -O tmp.zip && unzip -o tmp.zip && rm tmp.zip &&
+        wget -q https://nces.ed.gov/ccd/data/zip/ccd_sch_033_2223_l_1a_083023.zip -O tmp.zip && unzip -o tmp.zip && rm tmp.zip &&
+        wget -q https://nces.ed.gov/ccd/data/zip/ccd_sch_059_2223_l_1a_083023.zip -O tmp.zip && unzip -o tmp.zip && rm tmp.zip &&
+        wget -q https://nces.ed.gov/ccd/data/zip/ccd_sch_129_2223_w_1a_083023.zip -O tmp.zip && unzip -o tmp.zip && rm tmp.zip &&
+        wget -q https://nces.ed.gov/ccd/data/zip/ccd_sch_052_2223_l_1a_083023.zip -O tmp.zip && unzip -o tmp.zip && rm tmp.zip &&
+        echo 'All data files downloaded.'
+      "
